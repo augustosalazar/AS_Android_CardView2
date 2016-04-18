@@ -7,16 +7,27 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
+import com.firebase.client.Firebase;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity implements ViewAdapter.RecyclerClickListner {
 
     private ViewAdapter viewAdapter;
     private RecyclerView mRecyclerView;
+    private Firebase myFirebaseRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Firebase.setAndroidContext(this);
+
+        myFirebaseRef = new Firebase("https://uninortefirebasetest.firebaseio.com/");
+
+
+
         setContentView(R.layout.activity_main);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycle);
@@ -42,5 +53,10 @@ public class MainActivity extends AppCompatActivity implements ViewAdapter.Recyc
 
     public void onClickBotonBorrar(View view) {
         Log.d("Recyclerview", "Borrar Click position "+view.getTag());
+    }
+
+    public void onClickAgregarEntrada(View view) {
+        Random rn = new Random();
+        myFirebaseRef.child("message "+rn.nextInt(10 - 2 + 1) + 2).setValue(""+ rn.nextInt(10 - 2 + 1) + 2);
     }
 }

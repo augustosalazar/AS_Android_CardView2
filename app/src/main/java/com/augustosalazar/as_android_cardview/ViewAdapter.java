@@ -38,6 +38,7 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.MyViewHolder>{
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Information information = data.get(position);
         holder.tv.setText(information.title);
+        holder.bt.setTag(position);
 
     }
 
@@ -60,7 +61,7 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.MyViewHolder>{
             itemView.setOnClickListener(this);
             tv = (TextView) itemView.findViewById(R.id.listText);
             bt = (Button) itemView.findViewById(R.id.button);
-            bt.setTag("tag");
+
         }
 
         @Override
