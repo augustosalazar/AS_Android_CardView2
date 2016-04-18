@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Android CardView</string>
+
+    <string-array name="data">
+        <item>dato 1</item>
+        <item>dato 2</item>
+        <item>dato 3</item>
+        <item>dato 4</item>
+        <item>dato 5</item>
+        <item>dato 6</item>
+        <item>dato 7</item>
+        <item>dato 8</item>
+        <item>dato 9</item>
+        <item>dato 10</item>
+        <item>dato 11</item>
+        <item>dato 12</item>
+        <item>dato 13</item>
+        <item>dato 14</item>
+        <item>dato 15</item>
+        <item>dato 16</item>
+        <item>dato 17</item>
+        <item>dato 18</item>
+        <item>dato 19</item>
+        <item>dato 20</item>
+    </string-array>
+
+</resources>
